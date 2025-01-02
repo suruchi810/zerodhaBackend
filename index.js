@@ -364,6 +364,9 @@ app.get(
 
 app.listen(PORT, () => {
   console.log("app started");
-  mongoose.connect(uri);
+  mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   console.log("DB conneced");
 });
